@@ -80,6 +80,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
+# Fonts
+include vendor/heavens/config/fonts.mk
+
 # Include AOSP audio files
 include vendor/heavens/config/aosp_audio.mk
 
