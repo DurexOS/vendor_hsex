@@ -27,12 +27,12 @@ endif
 
 HEAVENS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(HEAVENS_VERSION).zip
 
-MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
+SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: heavens
 heavens: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(HEAVENS_TARGET_PACKAGE)
-	$(hide) $(MD5) $(HEAVENS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(HEAVENS_TARGET_PACKAGE).md5sum
+	$(hide) $(sha256sum) $(HEAVENS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(HEAVENS_TARGET_PACKAGE).sha256sum
 	#@echo "Package Complete: $(HEAVENS_TARGET_PACKAGE)" >&2
 
 	@echo  ${CL_YLW}""${CL_YLW}
