@@ -180,6 +180,16 @@ endif
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
+# Pixel customization
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= false
+ifeq ($(TARGET_INCLUDE_LIVE_WALLPAPERS),true)
+PRODUCT_PACKAGES += \
+    PixelLiveWallpapersOverlay
+endif
+
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/heavens/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/heavens/overlay/common
 
