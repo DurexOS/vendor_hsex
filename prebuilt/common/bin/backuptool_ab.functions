@@ -6,6 +6,7 @@
 export S=/system
 export C=/postinstall/tmp/backupdir
 export backuptool_ab=true
+export V=12
 
 copy_file() {
   old=`umask`
