@@ -102,14 +102,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Terminal
-
-# GamingMode
-PRODUCT_PACKAGES += \
-    GamingMode
-
 # Lineage packages
 PRODUCT_PACKAGES += \
     LineageParts \
@@ -138,11 +130,7 @@ PRODUCT_PACKAGES += \
     pigz \
     setcap \
     unrar \
-    wget \
     zip
-
-# Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:12/SP1A.211105.003/7757856:user/release-keys
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -165,16 +153,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
     procmem
-
-# Root
-PRODUCT_PACKAGES += \
-    adb_root
-ifneq ($(TARGET_BUILD_VARIANT),user)
-ifeq ($(WITH_SU),true)
-PRODUCT_PACKAGES += \
-    su
-endif
-endif
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
