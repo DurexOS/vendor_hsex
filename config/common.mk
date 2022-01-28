@@ -159,7 +159,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+    SystemUI \
+    Launcher3QuickStep
 
 # Pixel customization
 TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
